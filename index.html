@@ -7,20 +7,48 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <!-- UI 만드는 step
-    1. HTML/CSS로 미리 디자인
-    2. 필요할 때 보여달라고 코드짬(자바스크립트로) -->
-    <div class="alert-box">알림창임<button onclick="document.querySelector('.alert-box').style.display = 'none';">닫기</button></div>
-    <!-- <button onclick="document.querySelector('.alert-box').?? = '??';">버튼</button>
-    display를 block으로 바꾸라고하면 될듯 -->
-    <button onclick="document.querySelector('.alert-box').style.display = 'block';">버튼</button>
-    <!-- 버튼클릭시 이 코드 실행해줌 -->
-    <!-- (교훈)
-    컴퓨터는 지능이 0임
-    구체적으로 설명해야함 -->
-    <!-- (교훈2)
-    UI 알아서 만드는 법 배움
-    1. 미리 html/css 디자인
-    2. 필요할 때 보여달라고 JS짬 -->
+    <div class="alert-box">알림창임<button onclick="알림창닫기()">닫기</button></div>
+    <button onclick="알림창열기()">버튼</button>
+    <script>
+        // 긴 코드 짧은단어로 축약하는 법
+        // → function 문법 쓰면 됩니다
+        function 알림창열기(){
+            document.querySelector('.alert-box').style.display = 'block';
+            // 이 긴 코드를
+            // 알림창열기() <- 이 단어로 축약해줌
+        }
+        function 알림창닫기(){
+            document.querySelector('.alert-box').style.display = 'none';
+        }
+        // 자바스크립트 function(함수) 문법
+        // → 긴 코드 축약하고싶을 때 씁니다
+        // 알림창열기()
+        // 이렇게 쓰면
+        // document.querySelector('.alert-box').style.display = 'block';
+        // 이 코드가 남음
+        // - function 작명은 구체적인게 좋음
+
+        // 함수명 영어작명관습은 camelCase
+        // - 함수명 영어작명시엔
+        // 1. 소문자 시작
+        // 2. camelCase
+        // X : open_alert()
+        // X : close modal()
+        // O : openAlert()
+        // O : closeModal()
+
+        // 문법 배웠으면 어디에 쓸 지 생각해보십쇼
+        // 코드 짧게 축약해서 쓰고싶을 때
+        // function 꺼내서 쓰면 됩니다
+        // + 긴 코드 재사용이 잦을 때도 편리
+        // function 용도 2개 더 있음
+
+        // 자주겪는 에러
+        // 1. 조작할 html의 하단에 코드짜야 잘됩니다
+        // 2. 셀렉터 오타 주의
+        // 어쩌구 of null → 대부분 셀렉터 오타
+        // "style 어쩌구 하고싶은데 왼쪽에 있는데 null 입니다~"
+        // 3. 그냥 기본문법 오타
+    </script>
 </body>
 </html>
