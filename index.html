@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hello">안녕하세요</h1>
+    <h1 id="hi">JS 초보에요</h1>
+
+    <script>
+        document.getElementById('hello').innerHTML = '안녕';
+        // html문서 \ . = ~의 \ id가 hello인 html 요소를 가져와라 \ 그거의 내부 html
+        // html 문서의 id가 hello인 요소 찾아와 그거의 내부 html을 '안녕'으로
+        // 등호 : 오른쪽을 왼쪽에 넣으라는 뜻
+        // document.getElementById('??').?? = '??';
+        // ?? 부분 3개만 잘 채우면 상상하는 모든 것 변경가능
+        // 1. 바꿀 html 요소 id
+        // 2. 무엇을
+        // 3. 어떻게
+        // Q. 글자를 빨간색으로 변경?
+        // document.getElementById('hello').style.color = 'red';
+        // Q. <img>의 src 변경?
+        // document.getElementById('hello').src = '~~~';
+        document.getElementById('hi').innerHTML = 'JS 고수에요';
+        // getElementById('??') : 셀렉터라고 부름
+        // Q. 왜 이따구로 길게 코드짜야함?
+        // 프로그래밍은 컴퓨터에게 일시키는 행위
+        // (지금 HTML 바꾸라고 일시키는 중임)
+        // (주의) 컴퓨터는 사람처럼 대하면 안됩니다
+        // (컴퓨터에게 구체적으로 지시내리는 것일 뿐)
+    </script>
+    <!-- [ 오늘의 숙제 ]
+
+    <h1> 내부 글자 사이즈를 16px로 변경해오십시오
+    
+    자바스크립트로 font-size 변경하는 법을 구글찾아보면 되겠군요  -->
+</body>
+</html>
