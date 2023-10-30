@@ -7,40 +7,18 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="alert-box">알림창임<button onclick="알림창열기('none', '.alert-box');">닫기</button></div>
-    <button onclick="알림창열기('block', '.alert-box');">버튼</button>
+    <div class="alert-box">알림창임
+        <button onclick="알림창열기('none');">닫기</button></div>
+    <button onclick="알림창열기('block', '아이디입력하세요');">버튼1</button>
+    <button onclick="알림창열기('block', '비번입력하세요');">버튼2</button>
     <script>
         function 알림창열기(구멍, 구멍2){
-            document.querySelector(구멍2).style.display = 구멍;
+            document.querySelector('.alert-box').style.display = 구멍;
+            document.querySelector('.alert-box').innerHTML = 구멍2;
         }
-        // 오늘 배울 내용 : function에 구멍뚫기
-        // 알림창열기('안녕'); // 구멍에 '안녕' 넣어서 알림창열기 안의 코드 실행해주셈
-        // 알림창열기('바보'); // 구멍에 '바보' 넣어서 알림창열기 안의 코드 실행해주셈
-        // '문자는 따옴표 안에' 숫자는 그냥
-        // 알림창열기('block'); // 구멍에 'block' 넣어서 알림창열기 안의 코드 실행해주셈
-        // 알림창열기('block'); // <- 알림창닫힐듯
 
-        // 그래서 구멍 어디에 쓰는데
-        // 전에는 기능 2개 축약하려고 함수 2개나 만들었음
-        // 지금은 함수 1개로 2종류 코드실행 가능
-        // 구멍뚫어놓으면 함수하나로 다양한 코드 실행가능해짐
-        // 비슷한 함수가 많으면
-        // 그냥 가변적인 부분을 구멍뚫어보셈
-        // 구멍 <- 파라미터
-        // function, 파라미터는 필수 문법이 아님
-        // 펀의를 위해 쓰는 것일 뿐
-
-        // 파라미터 예시 2.
-        // function plus(구멍){
-        //     2 + 구멍
-        // }
-
-        // plus(1); // plus 함수 안의 코드 실행해주셈
-        // plus(2);
-        // plus(3);
-
-        // - 파라미터 작명은 아무렇게나 가능
-        // - 파라미터 여러개 가능
+        // 복잡하면 (상세히) 한글부터 짜고
+        // 코드로 옮겨보셈
     </script>
 </body>
 </html>
