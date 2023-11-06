@@ -12,6 +12,14 @@
 </head>
 
 <body>
+
+    <div class="black-bg hide">
+        <div class="white-bg hide">
+          <h4>로그인하세요</h4>
+          <button class="btn btn-danger" id="close">닫기</button>
+        </div>
+      </div> 
+
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <span class="navbar-brand">Navbar</span>
@@ -28,34 +36,19 @@
         <li class="list-group-item">And a fifth one</li>
     </ul>
 
-    <p class="hello">안녕</p>
-    <p class="hello">안녕</p>
-    <p class="hello">안녕</p>
-    <button id="test-btn">버튼</button>
+    <button id="open">로그인</button>
+
 
     <script>
-        // <p> 내부 글자를 '바보'로 변경하려면?
-        // document.querySelector('.hello').innerHTML = '바보';
-        // $('.hello').html('바보');
-        // <p> 내부 글자 스타일 변경은?
-        // $('.hello').css('color', 'red');
-        // class 탈부착하는 코드도 짧아짐
-        // $('.hello').addClass('show');
-        // 제거는 .removeClass()
-        // 토글은 .toggleClass()
-        // <p> 3개를 전부 '바보'로 바꾸려면?
-        // $('.hello').html('바보');
-        $('#test-btn').on('click', function(){
-            $('.hello').slideUp();
-            //          ↑ 메소드/함수라고 부름
+        document.querySelector('#open').addEventListener('click', function(){
+            document.querySelector('.black-bg').classList.toggle('hide');
+            document.querySelector('.white-bg').classList.toggle('hide');
         })
-        // (주의)
-        // $('셀렉터')로 찾으면
-        // jQuery함수만 붙일 수 있음
 
-        // (주의)
-        // querySelector('셀렉터')로 찾으면
-        // 자바스크립트함수만 붙일 수 있음
+        document.querySelector('#close').addEventListener('click', function(){
+            document.querySelector('.black-bg').classList.toggle('hide');
+            document.querySelector('.white-bg').classList.toggle('hide');
+        })
 
 
 
