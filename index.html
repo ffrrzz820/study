@@ -41,14 +41,34 @@
 
     <script>
         document.querySelector('#open').addEventListener('click', function(){
-            document.querySelector('.black-bg').classList.toggle('hide');
-            document.querySelector('.white-bg').classList.toggle('hide');
+            document.querySelector('.black-bg').classList.toggle('show');
+            document.querySelector('.white-bg').classList.toggle('show');
         })
 
         document.querySelector('#close').addEventListener('click', function(){
-            document.querySelector('.black-bg').classList.toggle('hide');
-            document.querySelector('.white-bg').classList.toggle('hide');
+            document.querySelector('.black-bg').classList.toggle('show');
+            document.querySelector('.white-bg').classList.toggle('show');
         })
+        
+        // UI에 애니메이션 추가하려면
+        // - 가능하면 CSS만으로 처리하는게 좋음
+        // (성능때문)
+        // 만드는 법칙이 있음
+        // one-way UI 애니메이션 만드는 법
+        // 1. 시작스타일
+        // 2. 최종스타일
+        // 3. 원할 때 최종스타일로 변하라고 코드짬
+        // 4. 시작스타일에 transition 추가
+
+        // A상태 → B상태
+        // 투명도가 0 → 1
+        // margin-left가 10px → 300px
+        // font-size가 15px → 30px
+
+        // Q. 위에서 내려오는 애니메이션?
+        // Q. 접히는 애니메이션?
+        // (height, overflow:hidden 조절하면 됩니다)
+        
 
 
 
