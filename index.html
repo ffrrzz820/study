@@ -34,10 +34,10 @@
     <!-- 버튼누르면 <ul>에 show 부착해보자 -->
     <script>
         // class="navbar-toggler" 버튼 클릭하면
-        document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function(){
+        document.querySelectorAll('.navbar-toggler')[0].addEventListener('click', function(){
             // 여기 코드 실행해줄듯
             // 저기에 show 클래스 추가해주세요~
-            document.getElementsByClassName('list-group')[0].classList.toggle('show');
+            document.querySelectorAll('.list-group')[0].classList.toggle('show');
             // 원하는 요소에 클래스명 추가하는 방법
 
             // Q. 버튼 한 번 더 누르면 숨기기?
