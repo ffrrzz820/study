@@ -1,64 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <div class="alert-box">
-        <p class="title1">알림창임</p>
-        <button>닫기</button>
-        <!-- 에구디러 -->
-        <!-- addEventListener() -->
-        <!-- (이거쓰면 onclick 필요없음) -->
-    </div>
-    <button onclick="아이디알림창()">버튼1</button>
-    <button onclick="비번알림창()">버튼2</button>
+    <!-- ui 만드는 방법 -->
+    <!-- 1. 미리 html css로 디자인 해놓고 숨기든가 함 
+    2. 버튼누르면 보여줌 -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand">Navbar</span>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- 2. 버튼누르면 보여달라고 JS 짬
+    - class 탈부착으로도 구현가능 -->
+    <ul class="list-group">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+    </ul>
+    <!-- 버튼누르면 <ul>에 show 부착해보자 -->
     <script>
-        // document.querySelector('.alert-box').addEventListener('click', function(){
-        //     코드~~~
-        // });
-        // document.querySelector('.alert-box') <- 얘를
-        // 'click' <- 클릭하면
-        // 코드~~~ <- 여기있는 코드 실행해줌
-        document.querySelector('.alert-box').addEventListener('click', function () {
-            document.querySelector('.alert-box').style.display = 'none';
-        });
-        // event가 뭐냐면
-        // 클릭
-        // 키입력
-        // 스크롤
-        // 드래그
-        // → event임
-        // event 감지하고 싶으면
-        // addEventListener('event명') 쓰면 됩니다
-        // 키입력 감지하고 싶으면
-        // addEventListener('keydown') 쓰면 됩니다
-        // 스크롤 감지하고 싶으면
-        // addEventListener('scroll') 쓰면 됩니다
-        
-        // document.querySelector('.alert-box').addEventListener('click', function(){});
-        // function(){} <- 콜백함수
-        // (파라미터자리에 들어가는 함수)
+        // class="navbar-toggler" 버튼 클릭하면
+        document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function(){
+            // 여기 코드 실행해줄듯
+            // 저기에 show 클래스 추가해주세요~
+            document.getElementsByClassName('list-group')[0].classList.toggle('show');
+            // 원하는 요소에 클래스명 추가하는 방법
 
-        function 알림창열기(구멍) {
-            document.querySelector('.alert-box').style.display = 구멍;
-        }
-        function 아이디알림창() {
-            // class로 찾기가능
-            // getElementsByClassName()
-            document.querySelector('.alert-box').style.display = 'block';
-            document.getElementsByClassName('title1')[0].innerHTML = '아이디입력하셈';
-        }
-        function 비번알림창() {
-            document.querySelector('.alert-box').style.display = 'block';
-            document.getElementsByClassName('title1')[0].innerHTML = '비번입력하셈';
-        }
+            // Q. 버튼 한 번 더 누르면 숨기기?
+            // - 버튼 짝수번 누르면 show 제거해주셈~
+            // - 버튼누를때 show가 이미 있으면 제거해주셈~
+        })
     </script>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
