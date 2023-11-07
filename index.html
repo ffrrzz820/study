@@ -18,7 +18,7 @@
           <h4>로그인하세요</h4>
           <!-- 모달창 안에 <form> 만들기 -->
           <!-- <form>은 서버로 유저정보 전송하려고 쓰는 것임 -->
-            <form action="success.html">
+            <form action="success.html" id="form">
                 <!--        ↑ 폼 전송할 페이지 기입란임 -->
                 <div class="my-3">
                   <input type="text" class="form-control">
@@ -37,38 +37,18 @@
       </div> 
 
       <script>
-        // 전송버튼 누르면 ← 이벤트리스너 쓰면 된다그랬음
-        // document.querySelector('.btn-primary').addEventListener('submit', function(){
-        // 저기 input에 입력한값이 공백이면 알림창띄워주세요~
-        // input에 입력한값이 공백이면 ← 안배웠는데요 ← 당연히 검색해봐야 함
-        // 자바스크립트 쓰면
-        // 모든 html 내용 찾거나 변경가능
-        // 이 경우 이 코드 실행해주세요~
-        // (조건문이라고함)
-        // 조건문 쓰는 법
-        // if(조건){조건이 참일 때 실행할 코드}
-        // else{위 조건이 참이 아닐 때 실행할 코드}
-        // })
-
-        // ↓ 거의 등호, 부등호 들어감
-        // 비교연산자
-        // ==
-        // <
-        // <=
-        // >
-        // >=
-        if(3 == 1){
-            // 실행할코드~~~
-            console.log('안녕')
-        } else {
-        // ↑ 그게아니면
-            console.log('안녕2')
-        }
-        // 아무튼 조건문입니다
-        // 조건이 충족될 때 코드실행하고싶으면 쓰셈
-        alert('안녕하세요')
-        
+        var form = document.querySelector('#form');
+        var inputId = document.querySelectorAll('.form-control')[0].value;
+        form.addEventListener('submit', function(e){
+            console.log(e);
+            if(inputId == ''){
+                alert('아이디입력하셈')
+            }
+        e.preventDefault();
+        })
       </script>
+
+      
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
