@@ -9,9 +9,7 @@
 .list-group{
     display: none;
 }
-.show{
-    display: block;
-}
+
 
 .black-bg {
     width : 100%;
@@ -29,9 +27,15 @@
     background: white;
     border-radius: 5px;
     padding: 30px;
+    transition: all 1s;
   } 
 
 .show{
     visibility: visible;
     opacity: 1;
+}
+
+.main-bg{
+    padding: 100px 20px;
+    background: lightgrey;
 }

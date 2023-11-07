@@ -16,9 +16,59 @@
     <div class="black-bg hide">
         <div class="white-bg hide">
           <h4>로그인하세요</h4>
-          <button class="btn btn-danger" id="close">닫기</button>
+          <!-- 모달창 안에 <form> 만들기 -->
+          <!-- <form>은 서버로 유저정보 전송하려고 쓰는 것임 -->
+            <form action="success.html">
+                <!--        ↑ 폼 전송할 페이지 기입란임 -->
+                <div class="my-3">
+                  <input type="text" class="form-control">
+                 </div>
+                 <div class="my-3">
+                   <input type="password" class="form-control">
+                 </div>
+                 <!-- <form>안의 <button> 주의 -->
+                 <button type="submit" class="btn btn-primary">전송</button>
+                 <button type="button" class="btn btn-danger" id="close">닫기</button>
+                 <!-- 지금은 아무렇게나 해도 전송잘됨 -->
+              </form> 
+              <!-- 전송버튼 누를 때 -->
+              <!-- 첫째 <input>에 입력된게 없으면 -->
         </div>
       </div> 
+
+      <script>
+        // 전송버튼 누르면 ← 이벤트리스너 쓰면 된다그랬음
+        // document.querySelector('.btn-primary').addEventListener('submit', function(){
+        // 저기 input에 입력한값이 공백이면 알림창띄워주세요~
+        // input에 입력한값이 공백이면 ← 안배웠는데요 ← 당연히 검색해봐야 함
+        // 자바스크립트 쓰면
+        // 모든 html 내용 찾거나 변경가능
+        // 이 경우 이 코드 실행해주세요~
+        // (조건문이라고함)
+        // 조건문 쓰는 법
+        // if(조건){조건이 참일 때 실행할 코드}
+        // else{위 조건이 참이 아닐 때 실행할 코드}
+        // })
+
+        // ↓ 거의 등호, 부등호 들어감
+        // 비교연산자
+        // ==
+        // <
+        // <=
+        // >
+        // >=
+        if(3 == 1){
+            // 실행할코드~~~
+            console.log('안녕')
+        } else {
+        // ↑ 그게아니면
+            console.log('안녕2')
+        }
+        // 아무튼 조건문입니다
+        // 조건이 충족될 때 코드실행하고싶으면 쓰셈
+        alert('안녕하세요')
+        
+      </script>
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
@@ -36,11 +86,15 @@
         <li class="list-group-item">And a fifth one</li>
     </ul>
 
-    <button id="open">로그인</button>
+
+    <div class="main-bg">
+        <h4>Shirts on Sale</h4>
+        <button id="login" class="btn btn-danger">로그인</button>
+    </div>
 
 
     <script>
-        document.querySelector('#open').addEventListener('click', function(){
+        document.querySelector('#login').addEventListener('click', function(){
             document.querySelector('.black-bg').classList.toggle('show');
             document.querySelector('.white-bg').classList.toggle('show');
         })
@@ -50,26 +104,7 @@
             document.querySelector('.white-bg').classList.toggle('show');
         })
         
-        // UI에 애니메이션 추가하려면
-        // - 가능하면 CSS만으로 처리하는게 좋음
-        // (성능때문)
-        // 만드는 법칙이 있음
-        // one-way UI 애니메이션 만드는 법
-        // 1. 시작스타일
-        // 2. 최종스타일
-        // 3. 원할 때 최종스타일로 변하라고 코드짬
-        // 4. 시작스타일에 transition 추가
-
-        // A상태 → B상태
-        // 투명도가 0 → 1
-        // margin-left가 10px → 300px
-        // font-size가 15px → 30px
-
-        // Q. 위에서 내려오는 애니메이션?
-        // Q. 접히는 애니메이션?
-        // (height, overflow:hidden 조절하면 됩니다)
-        
-
+       
 
 
 
