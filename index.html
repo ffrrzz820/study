@@ -16,37 +16,68 @@
     <div class="black-bg hide">
         <div class="white-bg hide">
           <h4>로그인하세요</h4>
-          <!-- 모달창 안에 <form> 만들기 -->
-          <!-- <form>은 서버로 유저정보 전송하려고 쓰는 것임 -->
             <form action="success.html" id="form">
-                <!--        ↑ 폼 전송할 페이지 기입란임 -->
                 <div class="my-3">
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" id="email">
                  </div>
                  <div class="my-3">
                    <input type="password" class="form-control">
                  </div>
-                 <!-- <form>안의 <button> 주의 -->
                  <button type="submit" class="btn btn-primary">전송</button>
                  <button type="button" class="btn btn-danger" id="close">닫기</button>
-                 <!-- 지금은 아무렇게나 해도 전송잘됨 -->
               </form> 
-              <!-- 전송버튼 누를 때 -->
-              <!-- 첫째 <input>에 입력된게 없으면 -->
         </div>
       </div> 
 
       <script>
-        var form = document.querySelector('#form');
-        var inputId = document.querySelectorAll('.form-control')[0].value;
-        form.addEventListener('submit', function(e){
-            console.log(e);
-            if(inputId == ''){
-                alert('아이디입력하셈')
-            }
-        e.preventDefault();
+        // else if 문법
+        // - 조건식을 연달아 쓰고 싶으면
+        // - 몇번이고 사용가능
+        if (3 == 3){
+            console.log('맞아요1');
+            // 그게아니면 만약에 = else if
+        } else if (1 == 3){
+            console.log('맞아요2');
+        } else if (4 == 3){
+            console.log('맞아요3');
+        } else {
+            console.log('맞아요4');
+        }
+        // 앞의 조건식이 참이면
+        // else문 뒤는 아예 실행안됩니다
+        // 컴퓨터가 안읽음
+
+
+
+        // if 두개 써도
+        // else if와 똑같은듯?
+        if (3 == 3){
+            console.log('맞아요1');
+        }
+        if (1 == 3){
+            console.log('맞아요2');
+        }
+        // 앞의 조건식과 상관없이
+        // 둘째 if문도 실행됨
+
+
+        let form = document.querySelector('#form');
+        form.addEventListener('submit', function(){
+            if (document.querySelector('#email').value == ''){
+                alert('아이디입력안함');
+                // (참고) 폼전송 막으려면 event.preventDefault()
+                // function(e) 로 하면 e.preventDefault()도 가능
+                event.preventDefault();
+            } // {} 중괄호 끝나고는 ; 생략가능
         })
       </script>
+
+      <!-- 오늘의 숙제 1: -->
+      <!-- 전송누르면 아이디/비번 입력란 -->
+      <!-- 둘 다 공백검사 -->
+      <!-- 오늘의 숙제 2: -->
+      <!-- 비번의 6자 미만이면 -->
+      <!-- 더 길게 입력하라고 안내문 띄우기 -->
 
       
 
