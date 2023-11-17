@@ -29,49 +29,68 @@
         </div>
       </div> 
 
-      <script>
-        function 삼육구게임(숫자){
-            if(숫자 % 9 == 0){
-                console.log('박수x2');
-            }else if(숫자 % 3 == 0){
-                console.log('박수');
-            }else{
-                console.log('통과');
-            }
-        }
-
-        function 합격했냐(num1, num2){
-            if(num1 > 40 && num2 > 40 && num1 + num2 >= 120){
-                console.log('합격');
-            }else{
-                console.log('불합격');
-            }
-        }
-
-        function 삼육구게임2(숫자){
-            if((숫자 <= 0) || (숫자 >= 100)){
-                alert('장난치지마');
-            }
-            const 마지막숫자 = 숫자 % 10;
-            if(마지막숫자 == 3 || 마지막숫자 == 6 || 마지막숫자 == 9){
-                console.log('박수');
-            }else{
-                console.log('통과');
-            }
-        }
-
-        삼육구게임2(456);
-        
-
-      </script>
+      
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <span class="navbar-brand">Navbar</span>
+            <span class="badge bg-dark">Dark 🔄</span>
+            <!-- 다크모드 변경버튼 만들기 -->
+            <!-- 버튼누르면 까만색 되는 class 추가하면 끝임 -->
+            <!-- (쉬운것부터) -->
+            <!-- 버튼누르면 내부 글자를 Dark → Light로 변경해보자 -->
+            <!-- 2회 누르면 다시 Dark -->
+            <!-- 3회 누르면 Light -->
+            <!-- 4회 누르면 Dark -->
+            <!-- ...... -->
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
+
+
+        <script>
+            // badge 홀수번 클릭시 내부 글자를 Light로 변경
+            // badge 짝수번 클릭시 내부 글자를 Dark로 변경
+            // ↑ 어딘가에 몇번 눌렀나 기록해야할듯?
+
+            // 자료 잠깐 저장하는 변수문법
+            // const 변수이름 = 변수에넣을값;
+            
+            // 그래서 변수 왜 쓰는데
+            // 1. 길고 복잡한 자료들 저장가능
+            // 2. 특정 값을 기억하게 만들고 싶으면
+
+            let count = 0;
+            // (모든 자료 다 넣을 수 있음)
+
+            document.querySelector('.badge').addEventListener('click', function(){
+                 count++;
+                 if(count % 2 == 0){
+                    document.querySelector('.badge').innerHTML = 'Dark';
+                 }else{
+                    document.querySelector('.badge').innerHTML = 'Light';
+                 }
+
+                // 변수에 +1 하는 법
+                // 변수++
+                // 변수 += 1
+                // 변수 = 변수 + 1
+            })
+            // 함수 바깥에서 만든 변수는 함수안에서 사용가능
+
+            // var let const 차이
+            // let 재선언x 재할당o
+            // const 재선언x 재할당x
+            // var 재선언o 재할당o
+            
+            // let과 const는 범위가 더 좁습니다. 모든 중괄호가 범위입니다.
+            // if, function, for 반복문 이런 것은 중괄호가 있습니다.
+            // 중괄호 안에서 만든 let const 변수의 경우 중괄호를 벗어나면 없다고 나옵니다. 
+        </script>
+
+
+
     </nav>
     <ul class="list-group">
         <li class="list-group-item">An item</li>
