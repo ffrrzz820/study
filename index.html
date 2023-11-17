@@ -30,60 +30,39 @@
       </div> 
 
       <script>
-
-        // 조건식에 대하여
-        if ( false ){
-            console.log('안녕')
+        function 삼육구게임(숫자){
+            if(숫자 % 9 == 0){
+                console.log('박수x2');
+            }else if(숫자 % 3 == 0){
+                console.log('박수');
+            }else{
+                console.log('통과');
+            }
         }
-        // 실은 if문 안엔
-        // true/false 넣어야 잘 작동함
-        // ↑ 다른 말로 boolean
-        // 111 ← 숫자타입
-        // '111' ← 문자타입
-        // ture ← boolean타입
-        // 다름 비교하고 싶으면 !=
-        // 엄격한 비교는 === ← 타입까지 같아야 같다고 해줌
-        // 느슨한 비교는 ==
 
+        function 합격했냐(num1, num2){
+            if(num1 > 40 && num2 > 40 && num1 + num2 >= 120){
+                console.log('합격');
+            }else{
+                console.log('불합격');
+            }
+        }
 
-        // true로 인식하는 자료들 = truthy 자료들
-        // 0 제외 숫자
-        // '문자'
-        // []
-        // {}
+        function 삼육구게임2(숫자){
+            if((숫자 <= 0) || (숫자 >= 100)){
+                alert('장난치지마');
+            }
+            const 마지막숫자 = 숫자 % 10;
+            if(마지막숫자 == 3 || 마지막숫자 == 6 || 마지막숫자 == 9){
+                console.log('박수');
+            }else{
+                console.log('통과');
+            }
+        }
 
-        // false로 인식하는 자료들 = falsy 자료들
-        // 0
-        // ''
-        // null
-        // undefined
-        // NaN
+        삼육구게임2(456);
+        
 
-        // 조건 2개 이상을 동시에 비교하고 싶다면
-        // && 그리고 || 연산자
-        // and      or
-        // and 둘다 참이면 전체를 참으로 해주세요~
-        // or 둘중 적어도 하나가 참이면 전체를 참으로 해주세요~
-
-        // 혼자서 코드짜봐야
-        // 혼자서도 코드 잘짬
-
-
-
-        // document.getElementById('email').addEventListener('input', function(){
-        //     // input 이벤트는
-        //     // <input>에 입력한 값이 바뀔 때 발생
-        //     console.log('안녕');
-        // })
-        // <input>에 입력한 값이 바뀔 때
-        // 뭔가 실행하려면?
-
-        // document.getElementById('email').addEventListener('change', function(){
-        //     // change 이벤트는
-        //     // <input>에 입력한 값이 바뀌고
-        //     // 포커스를 잃을 때 발생
-        //     console.log('안녕');
-        // })
       </script>
 
     <nav class="navbar navbar-light bg-light">
