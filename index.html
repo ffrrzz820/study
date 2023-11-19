@@ -55,91 +55,92 @@
         <button id="login" class="btn btn-danger">로그인</button>
     </div>
 
-    <div style="overflow: hidden;">
-        <div class="slide-container">
-            <div class="slide-box">
-                <img src="/car1.png" alt="">
-            </div>
-            <div class="slide-box">
-                <img src="/car2.png" alt="">
-            </div>
-            <div class="slide-box">
-                <img src="/car3.png" alt="">
-            </div>
-        </div>
-    </div>
-
-    <button class="slide-1">1</button>
-    <button class="slide-2">2</button>
-    <button class="slide-3">3</button>
-    <button class="prev">이전</button>
-    <button class="next">다음</button>
-    
 
     <script>
-        // 캐러셀 만들기
-
-        // one-way 애니메이션 들어있는 UI 만들기
-        // 1. 시작화면 만들기
-        // 2. 최종화면 만들기
-        // 3. 원할 때 최종화면으로 변하게 JS
-        // 4. transition:all 1s; 추가
-
-        document.querySelector('.slide-1').addEventListener('click', function(){
-            document.querySelector('.slide-container').style.transform = 'translateX(-0vw)';
-            지금사진 = 1;
-        })
-        document.querySelector('.slide-2').addEventListener('click', function(){
-            document.querySelector('.slide-container').style.transform = 'translateX(-100vw)';
-            지금사진 = 2;
-        })
-        document.querySelector('.slide-3').addEventListener('click', function(){
-            document.querySelector('.slide-container').style.transform = 'translateX(-200vw)';
-            지금사진 = 3;
-        })
-
-
-
-        // 다음버튼 기능만들기
-        // 다음버튼 누를때
-        // 1번보고있으면
-        // 2번 나와야함
-        // 2번보고있으면
-        // 3번 나와야함
-
-        const 이전 = document.querySelector('.prev');
-        const 다음 = document.querySelector('.next');
-
-
-
-        // 다음버튼 누르면
-        // 지금 보이는 사진이 1이면 2번사진 보여주세요~
-        // 지금 보이는 사진이 2이면 3번사진 보여주세요~
-
-        let 지금사진 = 1;
-
-
-        다음.addEventListener('click', function(){
-            document.querySelector('.slide-container').style.transform = `translateX(-${지금사진}00vw)`;
-            지금사진++;
         
-            if(지금사진 >= 3){
-                지금사진 = 0;
+        // function 함수(){
+        //     // function 문법
+        //     // 1. 긴코드 축약해서 쓸 수 있음
+        //     // 2. 파라미터 추가가능
+        //     // 3. return
+        //     // 함수쓰고 그 자리에 뭔가 뱉고싶으면
+        //     // return
+        //     return 123
+        //     // return 아무거나 가능
+        //     // return은 함수종료 기능도 가지고 있음
+
+        //     // return 용도가 뭐임
+        //     // 자료를 넣으면
+        //     // 다른 자료가 나오는
+        //     // 변환기 만들고 싶을 때
+        // }
+
+        // const 변수 = 함수();
+        // console.log(변수);
+
+
+
+        // 쇼핑몰용 페이지 만든다고 칩시다
+        // <p>가격 : 10000원</p>
+        // <p>부가세 : ???원</p>
+        // 갑자기 부가세계산이 필요하다
+        // console.log(10000 * 0.1)
+        // 가격넣으면 부가세 남겨주는
+        // 계산기 만들기
+
+        // function vat(a){
+        //     return a * 0.1
+        // }
+
+        // vat(50000);
+        // console.log(vat(50000));
+
+        // 문자 → 문자 변환기
+        // 숫자 → true/false 변환기
+        // 아무렇게나 제작가능
+
+        // 소수점있는 숫자연산시 주의점
+
+        // console.log(vat(55555));
+
+        // // 소수점 반올림하는 법
+        // // 숫자.toFixed(몇자리) (이거 쓰면 문자로 변환됨)
+        // function vat(a){
+        //     let num = (a * 1.1).toFixed(1);
+        //     return parseFloat(num);
+        // }
+
+        // 자바스크립트 + 연산자 특징
+        // '문자' + 123 → '문자123'
+        // '문자' + '문자' → '문자문자'
+
+        // 문자를 숫자로
+        // parseFloat('123') 실수로 변환
+        // parseInt('123') 정수로 변환
+
+        // 오늘의 교훈 :
+        // 1. 함수로 자료변환기 제작가능
+        // 2. 숫자연산시 주의점
+
+
+        // function 함수(a, b){
+        //     let 분 = a * 60;
+        //     let 합계 = (분 + b) * 1000;
+        //     return 합계;
+        // }
+
+        // console.log(함수(2, 10))
+
+
+        function 함수(a, b){
+            let 할인가 = a * 0.9;
+            if(b == true){
+                할인가 = 할인가 -1.5;
             }
-        })
+            return parseFloat(할인가.toFixed(2));
+        }
 
-        이전.addEventListener('click', function(){
-            // 지금사진이 0이면 2로, 그렇지 않으면 1을 뺀 값으로 설정
-            지금사진 = (지금사진 === 0) ? 2 : 지금사진 - 1;
-            // ↑ 위랑동일
-            // if (지금사진 === 0) {
-            //     지금사진 = 2;
-            // } else {
-            //     지금사진 = 지금사진 - 1;
-            // }
-            document.querySelector('.slide-container').style.transform = `translateX(-${지금사진}00vw)`;
-        });
-
+        console.log(함수(10, true))
 
     </script>
 
