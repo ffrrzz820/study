@@ -35,14 +35,6 @@
         <div class="container-fluid">
             <span class="navbar-brand">Navbar</span>
             <span class="badge bg-dark">Dark 🔄</span>
-            <!-- 다크모드 변경버튼 만들기 -->
-            <!-- 버튼누르면 까만색 되는 class 추가하면 끝임 -->
-            <!-- (쉬운것부터) -->
-            <!-- 버튼누르면 내부 글자를 Dark → Light로 변경해보자 -->
-            <!-- 2회 누르면 다시 Dark -->
-            <!-- 3회 누르면 Light -->
-            <!-- 4회 누르면 Dark -->
-            <!-- ...... -->
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,19 +42,7 @@
 
 
         <script>
-            // badge 홀수번 클릭시 내부 글자를 Light로 변경
-            // badge 짝수번 클릭시 내부 글자를 Dark로 변경
-            // ↑ 어딘가에 몇번 눌렀나 기록해야할듯?
-
-            // 자료 잠깐 저장하는 변수문법
-            // const 변수이름 = 변수에넣을값;
-            
-            // 그래서 변수 왜 쓰는데
-            // 1. 길고 복잡한 자료들 저장가능
-            // 2. 특정 값을 기억하게 만들고 싶으면
-
             let count = 0;
-            // (모든 자료 다 넣을 수 있음)
 
             document.querySelector('.badge').addEventListener('click', function(){
                  count++;
