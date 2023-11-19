@@ -13,8 +13,8 @@
 
 <body>
 
-    <div class="black-bg hide">
-        <div class="white-bg hide">
+    <div class="black-bg show">
+        <div class="white-bg">
           <h4>로그인하세요</h4>
             <form action="success.html" id="form">
                 <div class="my-3">
@@ -60,20 +60,72 @@
     </div>
 
     <script>
-        let count = 5;
-        setInterval(function(){
-            count -= 1;
-            if (count >= 0){
-                document.querySelector('.num').innerHTML = count;
-            }else if(count < 0){
-                document.querySelector('.alert-danger').style.display = 'none';
+        document.querySelector('#form').addEventListener('submit', function(){
+            if (document.querySelector('#email').value == ''){
+                alert('아이디입력안함');
+                event.preventDefault();
+            }else if (!/\S+@\S+\.\S+/.test(document.querySelector('#email').value)){
+                alert('이메일형식아님');
+                event.preventDefault();
             }
-        }, 1000);
 
+            const 비밀번호 = document.querySelector('#password').value
+            if (비밀번호 == ''){
+                alert('비번입력안함');
+                event.preventDefault();
+            }else if (!/[A-Z]/.test(비밀번호)){
+                alert('대문자없음')
+                event.preventDefault();
+            }
+        })
     </script>
 
+<!-- 문자 검사하는 쉬운 방법 -->
+<!-- console창에 'abc'.includes('a') -->
+<!-- 있으면 그 자리에 true 남겨줌 -->
+<!-- 없으면 그 자리에 false 남겨줌   -->
 
+<!-- 정규식쓰면 문자검사 가능 -->
+<!-- ↓ 정규식임 -->
+<!-- /a/ -->
 
+<!-- ↓ 있는지 검사할 문자 -->
+<!-- /a/.test('abcde') -->
+<!--            ↑ 검사당할 문자 -->
+<!-- 있으면 true 남겨줌 -->
+
+<!-- 정규식으로 문자 범위지정 가능 -->
+<!-- ↓ a-z중 아무 글자 1개 -->
+<!-- /[a-z]/.test('바보') -->
+<!-- 없으면 false 남겨줌 -->
+<!-- 대문자는 따로 인식함 -->
+<!-- ↓ 아무 알파벳 1개 -->
+<!-- /[a-zA-Z]/.test('abcdeA') -->
+<!-- ↓ 한국어 문자 하나 -->
+<!-- /[ㄱ-ㅎ가-힣ㅏ-ㅣ]/.test('바보') -->
+<!-- /[0-9]/.test('12345')  -->
+<!-- ↓ 아무 문자 1개라는 뜻 -->
+<!-- /\S/.test('ㅋㅋㅋㅋ') -->
+
+<!-- 정규식으로 시작/끝문자 검사하기 -->
+<!-- 시작문자 -->
+<!-- /^a/.test('aaassdds') --> 
+<!-- 끝문자 -->
+<!-- /a&/.test('sdfsdfa') -->
+<!-- or 기호는 | -->
+<!-- /a|b/.test('aaaa') -->
+
+<!-- 정규식으로 이메일형식 검사는? -->
+<!-- /\S+@\S+\.\S+/.test('aaa@bbb.ccc') -->
+<!-- .은 특별한 정규식 문법임 -->
+<!-- \S 아무 문자 1개를 뜻함 -->
+<!-- +는 왼쪽 문자 반복검색 -->
+
+<!-- ↓ a 전부 찾으라는거 아님 -->
+<!-- a 하나만 찾아달라는거 -->
+<!-- /a/.test('aaa@bbb.ccc') -->
+
+<!-- regular expression (정규표현식) -->
 
 
 
