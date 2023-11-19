@@ -1,1 +1,0 @@
-const total_web_list = [{"seq":1,"reg_date":"2023-04-20 19:36:11","address":"www.kns.tv\/"},{"seq":2,"reg_date":"2023-04-20 19:39:52","address":"http:\/\/www.thedailynews.co.kr\/sub_read.html?uid=105661"},{"seq":3,"reg_date":"2023-04-20 20:06:25","address":"www.thedailynews.co.kr"}]
