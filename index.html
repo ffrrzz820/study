@@ -87,27 +87,58 @@
 
         document.querySelector('.slide-1').addEventListener('click', function(){
             document.querySelector('.slide-container').style.transform = 'translateX(-0vw)';
+            지금사진 = 1;
         })
         document.querySelector('.slide-2').addEventListener('click', function(){
             document.querySelector('.slide-container').style.transform = 'translateX(-100vw)';
+            지금사진 = 2;
         })
         document.querySelector('.slide-3').addEventListener('click', function(){
             document.querySelector('.slide-container').style.transform = 'translateX(-200vw)';
+            지금사진 = 3;
         })
 
+
+
+        // 다음버튼 기능만들기
+        // 다음버튼 누를때
+        // 1번보고있으면
+        // 2번 나와야함
+        // 2번보고있으면
+        // 3번 나와야함
 
         const 이전 = document.querySelector('.prev');
         const 다음 = document.querySelector('.next');
 
 
 
-        이전.addEventListener('click',function(){
-            document.querySelector('.slide-container').style.transform = 'translateX(100vw)';
+        // 다음버튼 누르면
+        // 지금 보이는 사진이 1이면 2번사진 보여주세요~
+        // 지금 보이는 사진이 2이면 3번사진 보여주세요~
+
+        let 지금사진 = 1;
+
+
+        다음.addEventListener('click', function(){
+            document.querySelector('.slide-container').style.transform = `translateX(-${지금사진}00vw)`;
+            지금사진++;
+        
+            if(지금사진 >= 3){
+                지금사진 = 0;
+            }
         })
 
-        다음.addEventListener('click',function(){
-            document.querySelector('.slide-container').style.transform = 'translateX(-100vw)';
-        })
+        이전.addEventListener('click', function(){
+            // 지금사진이 0이면 2로, 그렇지 않으면 1을 뺀 값으로 설정
+            지금사진 = (지금사진 === 0) ? 2 : 지금사진 - 1;
+            // ↑ 위랑동일
+            // if (지금사진 === 0) {
+            //     지금사진 = 2;
+            // } else {
+            //     지금사진 = 지금사진 - 1;
+            // }
+            document.querySelector('.slide-container').style.transform = `translateX(-${지금사진}00vw)`;
+        });
 
 
     </script>
