@@ -40,37 +40,6 @@
             </button>
         </div>
 
-
-        <script>
-            let count = 0;
-
-            document.querySelector('.badge').addEventListener('click', function(){
-                 count++;
-                 if(count % 2 == 0){
-                    document.querySelector('.badge').innerHTML = 'Dark';
-                 }else{
-                    document.querySelector('.badge').innerHTML = 'Light';
-                 }
-
-                // 변수에 +1 하는 법
-                // 변수++
-                // 변수 += 1
-                // 변수 = 변수 + 1
-            })
-            // 함수 바깥에서 만든 변수는 함수안에서 사용가능
-
-            // var let const 차이
-            // let 재선언x 재할당o
-            // const 재선언x 재할당x
-            // var 재선언o 재할당o
-            
-            // let과 const는 범위가 더 좁습니다. 모든 중괄호가 범위입니다.
-            // if, function, for 반복문 이런 것은 중괄호가 있습니다.
-            // 중괄호 안에서 만든 let const 변수의 경우 중괄호를 벗어나면 없다고 나옵니다. 
-        </script>
-
-
-
     </nav>
     <ul class="list-group">
         <li class="list-group-item">An item</li>
@@ -85,26 +54,13 @@
         <h4>Shirts on Sale</h4>
         <button id="login" class="btn btn-danger">로그인</button>
     </div>
-
+    
+    <div class="alert alert-danger">
+        5초 이내 구매시 사은품 증정
+      </div>
 
     <script>
-        document.querySelector('#login').addEventListener('click', function(){
-            document.querySelector('.black-bg').classList.toggle('show');
-            document.querySelector('.white-bg').classList.toggle('show');
-        })
-
-        document.querySelector('#close').addEventListener('click', function(){
-            document.querySelector('.black-bg').classList.toggle('show');
-            document.querySelector('.white-bg').classList.toggle('show');
-        })
-        
-       
-
-
-
-        document.querySelectorAll('.navbar-toggler')[0].addEventListener('click', function(){
-            document.querySelectorAll('.list-group')[0].classList.toggle('show');
-        })
+      
     </script>
 
 
