@@ -19,6 +19,10 @@ const 갯수 = 버튼.length;
 for (let i = 0; i < 갯수; i++){ // 3회라는 뜻임
 
     버튼[i].addEventListener('click', function(){
+        탭열기(i);
+    })
+
+    function 탭열기(구멍){
         버튼.forEach((e) => {
             e.classList.remove('orange');
         });
@@ -26,9 +30,10 @@ for (let i = 0; i < 갯수; i++){ // 3회라는 뜻임
             e.classList.remove('show');
         });
         
-        버튼[i].classList.add('orange');
-        설명[i].classList.add('show');
-    })
+        버튼[구멍].classList.add('orange');
+        설명[구멍].classList.add('show');
+    }
+
 }
 // 시작은 i = 0
 // 복붙할 때마다 i+1

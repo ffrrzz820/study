@@ -1,95 +1,114 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello, world!</title>
+    <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
-
 <body>
-    <style>
-        ul.list {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          border-bottom: 1px solid #ccc;
-        }
-        ul.list::after {
-          content: '';
-          display: block;
-          clear: both;
-        }
-        .tab-button {
-          display: block;
-          padding: 10px 20px 10px 20px;
-          float: left;
-          margin-right: -1px;
-          margin-bottom: -1px;
-          color: grey;
-          text-decoration: none;
-          cursor: pointer;
-        }
-        .orange {
-          border-top: 2px solid orange;
-          border-right: 1px solid #ccc;
-          border-bottom: 1px solid white;
-          border-left: 1px solid #ccc;
-          color: black;
-          margin-top: -2px;
-        }
-        .tab-content {
-          display: none;
-          padding: 10px;
-        }
-        .show {
-          display: block;
-        }
-      </style>
-      
-      <div class="container mt-5">
-        <ul class="list">
-          <li class="tab-button">Products</li>
-          <li class="tab-button orange">Information</li>
-          <li class="tab-button">Shipping</li>
-          <li class="tab-button">Shipping</li>
-          <li class="tab-button">Shipping</li>
-          <li class="tab-button">Shipping</li>
-        </ul>
-        <div class="tab-content">
-          <p>상품설명입니다. Product</p>
+    <div class="black-bg hide">
+        <div class="white-bg hide">
+          <h4>로그인하세요</h4>
+            <form action="success.html" id="form">
+                <div class="my-3">
+                  <input type="text" class="form-control">
+                 </div>
+                 <div class="my-3">
+                   <input type="password" class="form-control">
+                 </div>
+                 <button type="submit" class="btn btn-primary">전송</button>
+                 <button type="button" class="btn btn-danger" id="close">닫기</button>
+              </form> 
         </div>
-        <div class="tab-content show">
-          <p>스펙설명입니다. Information</p>
-        </div>
-        <div class="tab-content">
-          <p>배송정보입니다. Shipping</p>
-        </div><div class="tab-content">
-          <p>배송정보입니다. Shipping</p>
-        </div>
-        <div class="tab-content">
-            <p>배송정보입니다. Shipping</p>
-          </div>
-          <div class="tab-content">
-            <p>배송정보입니다. Shipping</p>
-          </div>
-          <div class="tab-content">
-            <p>배송정보입니다. Shipping</p>
-          </div>
       </div> 
-    
 
-      
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand">Navbar</span>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <ul class="list-group">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+    </ul>
+    <div class="main-bg">
+        <h4>Shirts on Sale</h4>
+        <button id="login" class="btn btn-danger">로그인</button>
+    </div>
 
-    <script src="/tab.js"></script>
 
+    <script>
+        // 검은배경 누르면
+        // 모달창 닫는 기능 만들기
+        document.querySelector('.black-bg').addEventListener('click', function(e){
+
+            // e.target; // 유저가 실제로 누른거
+            // console.log(e.target); 
+            // e.currentTarget; // 이벤트리스너 달린 곳
+            // e.preventDefault(); // 이벤트 기본동작 막아줌
+            // e.stopPropagation(); // 내 상위요소로 이벤트 버블링 막아줌
+
+            // 내가 실제로 누른게 까만배경이면
+            // 모달창 닫아주세요~
+            if (e.target == document.querySelector('.black-bg')){
+                document.querySelector('.black-bg').classList.remove('show');
+            }
+        })
+
+        // 모든 브라우저는 이벤트 버블링이 일어남
+        // (이벤트가 상위 html로 퍼지는 현상)
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        document.querySelector('#login').addEventListener('click', function(){
+            document.querySelector('.black-bg').classList.toggle('show');
+            document.querySelector('.white-bg').classList.toggle('show');
+        })
+        document.querySelector('#close').addEventListener('click', function(){
+            document.querySelector('.black-bg').classList.toggle('show');
+            document.querySelector('.white-bg').classList.toggle('show');
+        })
+        
+       
+        document.querySelectorAll('.navbar-toggler')[0].addEventListener('click', function(){
+            document.querySelectorAll('.list-group')[0].classList.toggle('show');
+        })
+
+
+
+        var form = document.querySelector('#form');
+        var inputId = document.querySelectorAll('.form-control')[0].value;
+        form.addEventListener('submit', function(e){
+            console.log(e);
+            if(inputId == ''){
+                alert('아이디입력하셈')
+            }
+        e.preventDefault();
+        })
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 </body>
-
 </html>
