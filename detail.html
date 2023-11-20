@@ -12,53 +12,49 @@
 </head>
 
 <body>
-    <style>
-        ul.list {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          border-bottom: 1px solid #ccc;
-        }
-        ul.list::after {
-          content: '';
-          display: block;
-          clear: both;
-        }
-        .tab-button {
-          display: block;
-          padding: 10px 20px 10px 20px;
-          float: left;
-          margin-right: -1px;
-          margin-bottom: -1px;
-          color: grey;
-          text-decoration: none;
-          cursor: pointer;
-        }
-        .orange {
-          border-top: 2px solid orange;
-          border-right: 1px solid #ccc;
-          border-bottom: 1px solid white;
-          border-left: 1px solid #ccc;
-          color: black;
-          margin-top: -2px;
-        }
-        .tab-content {
-          display: none;
-          padding: 10px;
-        }
-        .show {
-          display: block;
-        }
-      </style>
+
+    <div class="container mt-3">
+        <div class="card p-3" style="display: flex;flex-direction: row;">
+            <span id="name">상품명</span> / <span id="price">가격</span>
+        </div>
+    </div>
+
+
+    <script>
+        let car = ['소나타', 50000, 'white'];
+        // 변수 하나에 여러자료 저장가능
+        // array 자료형
+        // [자료1, 자료2, 자료3, ...]
+        let car2 = {name : '소나타', price : 50000};
+        // object 자료형
+        // {이름1 : 자료1, 이름2 : 자료2, ...}
+        // 이름붙여서 저장가능한게 장점
+        // 이름부분 : key
+        // 값부분 : value
+        // key : value 형태로 저장가능한게 장점
+
+        // array / object 차이점
+        // array는 자료간 순서가 존재함
+        // object는 순서개념 없음
+        // array는 그래서
+        // 자료간 정렬도 가능
+        // car.sort();
+        // 중간에 자르기도 가능
+        // car.slice(1,3)
+
+        document.querySelector('#name').innerHTML = car2['name'];
+        document.querySelector('#price').innerHTML = car2['price'];
+    </script>
+
       
       <div class="container mt-5">
         <ul class="list">
-          <li class="tab-button">Products</li>
-          <li class="tab-button orange">Information</li>
-          <li class="tab-button">Shipping</li>
-          <li class="tab-button">Shipping</li>
-          <li class="tab-button">Shipping</li>
-          <li class="tab-button">Shipping</li>
+          <li class="tab-button" data-id="0">Products</li>
+          <li class="tab-button orange" data-id="1">Information</li>
+          <li class="tab-button" data-id="2">Shipping</li>
+          <li class="tab-button" data-id="3">Shipping</li>
+          <li class="tab-button" data-id="4">Shipping</li>
+          <li class="tab-button" data-id="5">Shipping</li>
         </ul>
         <div class="tab-content">
           <p>상품설명입니다. Product</p>
