@@ -1,3 +1,7 @@
+:root{
+    scroll-behavior: auto;
+}
+
 .alert-box{
     background-color: skyblue;
     padding: 20px;
@@ -38,4 +42,28 @@
 .main-bg{
     padding: 100px 20px;
     background: lightgrey;
+}
+
+.slide-container{
+    width: 300vw;
+    transition: all 1s;
+}
+
+.slide-box{
+    width: 100vw;
+    float: left;
+}
+
+.slide-box img{
+    width: 100%;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+.navbar-brand{
+    font-size: 30px;
 }

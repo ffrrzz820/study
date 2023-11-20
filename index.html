@@ -35,61 +35,10 @@
         <div class="container-fluid">
             <span class="navbar-brand">Navbar</span>
             <span class="badge bg-dark">Dark 🔄</span>
-            <!-- 다크모드 변경버튼 만들기 -->
-            <!-- 버튼누르면 까만색 되는 class 추가하면 끝임 -->
-            <!-- (쉬운것부터) -->
-            <!-- 버튼누르면 내부 글자를 Dark → Light로 변경해보자 -->
-            <!-- 2회 누르면 다시 Dark -->
-            <!-- 3회 누르면 Light -->
-            <!-- 4회 누르면 Dark -->
-            <!-- ...... -->
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-
-
-        <script>
-            // badge 홀수번 클릭시 내부 글자를 Light로 변경
-            // badge 짝수번 클릭시 내부 글자를 Dark로 변경
-            // ↑ 어딘가에 몇번 눌렀나 기록해야할듯?
-
-            // 자료 잠깐 저장하는 변수문법
-            // const 변수이름 = 변수에넣을값;
-            
-            // 그래서 변수 왜 쓰는데
-            // 1. 길고 복잡한 자료들 저장가능
-            // 2. 특정 값을 기억하게 만들고 싶으면
-
-            let count = 0;
-            // (모든 자료 다 넣을 수 있음)
-
-            document.querySelector('.badge').addEventListener('click', function(){
-                 count++;
-                 if(count % 2 == 0){
-                    document.querySelector('.badge').innerHTML = 'Dark';
-                 }else{
-                    document.querySelector('.badge').innerHTML = 'Light';
-                 }
-
-                // 변수에 +1 하는 법
-                // 변수++
-                // 변수 += 1
-                // 변수 = 변수 + 1
-            })
-            // 함수 바깥에서 만든 변수는 함수안에서 사용가능
-
-            // var let const 차이
-            // let 재선언x 재할당o
-            // const 재선언x 재할당x
-            // var 재선언o 재할당o
-            
-            // let과 const는 범위가 더 좁습니다. 모든 중괄호가 범위입니다.
-            // if, function, for 반복문 이런 것은 중괄호가 있습니다.
-            // 중괄호 안에서 만든 let const 변수의 경우 중괄호를 벗어나면 없다고 나옵니다. 
-        </script>
-
-
 
     </nav>
     <ul class="list-group">
@@ -101,36 +50,59 @@
     </ul>
 
 
+
     <div class="main-bg">
         <h4>Shirts on Sale</h4>
         <button id="login" class="btn btn-danger">로그인</button>
     </div>
 
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+    </div> 
+
+    <div style="height: 1000px;"></div>
+
+    
+
+      
 
     <script>
-        document.querySelector('#login').addEventListener('click', function(){
-            document.querySelector('.black-bg').classList.toggle('show');
-            document.querySelector('.white-bg').classList.toggle('show');
+        // div의 스크롤바 내린 양 + 눈에보이는div높이 == div의 실제높이
+        // <div> 스크롤바 내린 높이는
+        // 셀렉터.scrollTop
+        document.querySelector('.lorem').addEventListener('scroll', function(){
+            var 스크롤양 = document.querySelector('.lorem').scrollTop;
+            var 실제높이 = document.querySelector('.lorem').scrollHeight;
+            var 높이 = document.querySelector('.lorem').clientHeight;
+            console.log('스크롤양 : '+스크롤양, 실제높이);
+            if(스크롤양 + 높이 >= 실제높이 - 10){
+                alert('다읽음');
+            }
         })
 
-        document.querySelector('#close').addEventListener('click', function(){
-            document.querySelector('.black-bg').classList.toggle('show');
-            document.querySelector('.white-bg').classList.toggle('show');
+
+
+
+        // ↓ 얘가 스크롤 될 때 마다
+        window.addEventListener('scroll', function(){
+            // 여기코드 실행해줌
+            // 유저가 얼마나 스크롤바 내렸나
+            // window.scrollY
+            // (px 단위임)
+
+            // 강제로 스크롤하기
+            // window.scrollTo(x, y)
+            // bootstrap 설치시 스크롤을 스무스하게 처리해주기도 함
+            console.log(window.scrollY)
+            if (window.scrollY >= 100){
+                document.querySelector('.navbar-brand').style.fontSize = '20px';
+            }else{
+                document.querySelector('.navbar-brand').style.fontSize = '30px';
+            }
         })
+
         
-       
-
-
-
-        document.querySelectorAll('.navbar-toggler')[0].addEventListener('click', function(){
-            document.querySelectorAll('.list-group')[0].classList.toggle('show');
-        })
     </script>
-
-
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
