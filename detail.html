@@ -51,29 +51,55 @@
     <select class="form-select mt-2" id="productSelect">
       <option>모자</option>
       <option>셔츠</option>
+      <option>바지</option>
     </select>
     <select class="form-select mt-2 hide" id="sizeSelect">
-        <option>95</option>
-        <option>100</option>
       </select>
-    <!-- <select> 사용법 -->
-    <!-- (<input> 이거랑 똑같음) -->
-    <!-- 다만 사용자가 이상한거 입력못함 -->
 </form>
 
 <script>
-  // <script> 안에 대충 적은 코드는
-    // 페이지 로드시 1회만 실행됨
 
-    // 유저가 선택할 때 마다
-    // 저 코드 실행해야할듯
+
+
+
+
+
+// 자바스크립트로 html 생성법
+  // const a = document.createElement('p');
+  // a.innerHTML = '안녕';
+  // document.getElementById('test').appendChild(a);
+
+// .createElement()
+// (더 빠름) (실은 별 차이 없음)
+
+
+  // 자바스크립트로 html 생성법 2
+  // const 템플릿 = '<p>안녕</p>';
+  //                                                       ↓ (안쪽 맨 밑)
+  // document.querySelector('#test').insertAdjacentHTML('beforeend', 템플릿)
+  //                                  ↑ 문자형 HTML 넣어주는 함수
+
+// .insertAdjacentHTML()
+
+
+
+
+
   document.querySelector('#productSelect').addEventListener('change', 사이즈보이게하기);
 
   function 사이즈보이게하기(){
     // 이벤트리스너 안에서 e.currentTarget 아니면 this 이런거 써도 될듯
-    let 셔츠선택 = this.value;
-    if (셔츠선택 == '셔츠'){
+    let 선택 = this.value;
+    if (선택 == '셔츠'){
         document.querySelector('#sizeSelect').classList.remove('hide');
+        const 셔츠 = `<option>95</option>
+        <option>100</option>`;
+        document.querySelector('#sizeSelect').innerHTML = 셔츠;
+    }else if(선택 == '바지'){
+      document.querySelector('#sizeSelect').classList.remove('hide');
+      const 바지 = `<option>28</option>
+      <option>30</option>`;
+      document.querySelector('#sizeSelect').innerHTML = 바지;
     }else{
       document.querySelector('#sizeSelect').classList.add('hide');
     }
