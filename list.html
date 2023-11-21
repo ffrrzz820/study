@@ -46,14 +46,17 @@
           { id : 2, price : 60000, title : 'Black Monastery' }
         ];
 
-        console.log(products)
-        document.querySelectorAll('.card-body h5')[0].innerHTML = products[0].title;
-        document.querySelectorAll('.card-body h5')[1].innerHTML = products[1].title;
-        document.querySelectorAll('.card-body h5')[2].innerHTML = products[2].title;
+        for (let i = 0; i < products.length; i++){
+            document.querySelectorAll('.card-body h5')[i].innerHTML = products[i].title;
+            document.querySelectorAll('.card-body p')[i].innerHTML = products[i].price;
+        }
+        // document.querySelectorAll('.card-body h5')[0].innerHTML = products[0].title;
+        // document.querySelectorAll('.card-body h5')[1].innerHTML = products[1].title;
+        // document.querySelectorAll('.card-body h5')[2].innerHTML = products[2].title;
 
-        document.querySelectorAll('.card-body p')[0].innerHTML = products[0].price;
-        document.querySelectorAll('.card-body p')[1].innerHTML = products[1].price;
-        document.querySelectorAll('.card-body p')[2].innerHTML = products[2].price;
+        // document.querySelectorAll('.card-body p')[0].innerHTML = products[0].price;
+        // document.querySelectorAll('.card-body p')[1].innerHTML = products[1].price;
+        // document.querySelectorAll('.card-body p')[2].innerHTML = products[2].price;
       </script> 
 
 

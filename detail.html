@@ -45,6 +45,41 @@
         // (서버가 편함)
     </script>
 
+
+<form class="container my-5 form-group">
+    <p>상품선택</p>
+    <select class="form-select mt-2" id="productSelect">
+      <option>모자</option>
+      <option>셔츠</option>
+    </select>
+    <select class="form-select mt-2 hide" id="sizeSelect">
+        <option>95</option>
+        <option>100</option>
+      </select>
+    <!-- <select> 사용법 -->
+    <!-- (<input> 이거랑 똑같음) -->
+    <!-- 다만 사용자가 이상한거 입력못함 -->
+</form>
+
+<script>
+  // <script> 안에 대충 적은 코드는
+    // 페이지 로드시 1회만 실행됨
+
+    // 유저가 선택할 때 마다
+    // 저 코드 실행해야할듯
+  document.querySelector('#productSelect').addEventListener('change', 사이즈보이게하기);
+
+  function 사이즈보이게하기(){
+    let 셔츠선택 = this.value;
+    if (셔츠선택 == '셔츠'){
+        document.querySelector('#sizeSelect').classList.remove('hide');
+    }else{
+      document.querySelector('#sizeSelect').classList.add('hide');
+    }
+  }
+    
+    
+</script>
       
       <div class="container mt-5">
         <ul class="list">
