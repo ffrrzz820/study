@@ -70,6 +70,7 @@
   document.querySelector('#productSelect').addEventListener('change', 사이즈보이게하기);
 
   function 사이즈보이게하기(){
+    // 이벤트리스너 안에서 e.currentTarget 아니면 this 이런거 써도 될듯
     let 셔츠선택 = this.value;
     if (셔츠선택 == '셔츠'){
         document.querySelector('#sizeSelect').classList.remove('hide');
