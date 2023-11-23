@@ -11,6 +11,53 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
+<!-- 서버 -->
+<!-- 데이터달라고 하면 -->
+<!-- 데이터보내주는 프로그램 -->
+
+<!-- [서버 코드] -->
+<!-- 누가 이미지 요청하면 이미지주셈 -->
+<!-- 누가 html 요청하면 html 주셈 -->
+
+<!-- 유저 : → 데이터 줘 -->
+<!-- 서버 : ← 싫음 ㅅㄱ -->
+
+<!-- 1. 어떤 데이터인지 --> <!-- 데이터의 url -->
+<!-- 2. 어떤 방법으로 요청할건지 --> <!-- GET인지 POST인지 -->
+<!-- 잘 기재해야 데이터줌 -->
+
+<!-- 데이터의 url 기재해야함 -->
+<!-- GET/POST 둘 중 하나 선택해야함 -->
+<!-- GET ← 데이터 읽을 때 -->
+<!-- POST ← 데이터 보낼 때 -->
+
+<!-- Q. 특정 url로 GET 요청하는법? -->
+<!-- 브라우저 주소창이 GET 요청하는 곳임 -->
+
+<!-- Q. 특정 url로 POST 요청하는법? -->
+<!-- <form action="/sdffsdsdf" method="post"></form> -->
+
+<!-- GET/POST 요청하면 -->
+<!-- 브라우저 새로고침됨 -->
+
+<!-- ajax가 뭐냐면 -->
+<!-- 새로고침없이 GET, POST 요청하는 기능 -->
+
+<!-- ajax로 GET 요청하는 법 -->
+<!-- html 파일 이렇게 미리보기 띄워야 ajax 사용가능 -->
+<!-- 127.0.0.1 어쩌구 아니면 localhost 떠있어야함 -->
+
+<script>
+
+  $.get('https://codingapple1.github.io/hello.txt')
+  .done(function(data){
+    console.log(data)
+    //            ↑ 서버에서 받아온 데이터는 여기
+  })
+
+</script>
+
+
 <body>
     <div class="card-group container">
         <div class="card">
@@ -50,13 +97,6 @@
             document.querySelectorAll('.card-body h5')[i].innerHTML = products[i].title;
             document.querySelectorAll('.card-body p')[i].innerHTML = products[i].price;
         }
-        // document.querySelectorAll('.card-body h5')[0].innerHTML = products[0].title;
-        // document.querySelectorAll('.card-body h5')[1].innerHTML = products[1].title;
-        // document.querySelectorAll('.card-body h5')[2].innerHTML = products[2].title;
-
-        // document.querySelectorAll('.card-body p')[0].innerHTML = products[0].price;
-        // document.querySelectorAll('.card-body p')[1].innerHTML = products[1].price;
-        // document.querySelectorAll('.card-body p')[2].innerHTML = products[2].price;
       </script> 
 
 

@@ -67,7 +67,6 @@ let shirts = [95, 100, 105];
   document.querySelector('#productSelect').addEventListener('change', 사이즈보이게하기);
 
   function 사이즈보이게하기(){
-    // 이벤트리스너 안에서 e.currentTarget 아니면 this 이런거 써도 될듯
     let 선택 = this.value;
     if (선택 == '셔츠'){
         document.querySelector('#sizeSelect').classList.remove('hide');
@@ -78,11 +77,6 @@ let shirts = [95, 100, 105];
     }else if(선택 == '바지'){
       document.querySelector('#sizeSelect').classList.remove('hide');
       document.querySelector('#sizeSelect').innerHTML = '';
-      // array에 붙일 수 있는
-      // forEach 반복문
-      // forEach 안에 파라미터 2개 생성가능
-      // - 첫 째는 array 안의 데이터
-      // - 둘 째는 0부터 1씩 증가하는 정수
       pants.forEach(function(data){
         document.querySelector('#sizeSelect').insertAdjacentHTML('beforeend', `<option>${data}</option>`);
       })
@@ -92,25 +86,51 @@ let shirts = [95, 100, 105];
   }
     
     
-  // object 자료 갯수만큼 반복문 돌리려면
   let obj = {name : 'kim', age : 20}
   for (var key in obj){
     console.log(key);
-    //          ↑ key값(자료이름)
-
-    // 반복문의 용도
-    // 1. 코드 반복
-    // 2. array, object 데이터 전부 꺼낼 때
-
-    // arrow function 사용가능
-    // (주의) arrow function 쓰면
-    // 함수 안의 this 뜻이 달라질 수 있음
-    // arrow function 안에서 쓰면
-    // 바깥에 있던 this를 그대로 가져다씀
-    // function 안에서 쓰면
-    // this가 알맞게 재정의됨
   }
 
+
+  let 출석부 = ['흥민', '영희', '철수', '재석', '철수'];
+
+  function 이름찾기(이름){
+  for (let i = 0; i < 출석부.length; i++){
+    if(이름 == 출석부[i]){
+      console.log('있어요');
+      return;
+    }
+  }
+}
+
+이름찾기('철수');
+
+
+
+// for (let j = 2; j < 10; j++){
+//   for (let i = 1; i < 10; i++){
+//     console.log(j * i);
+//   }
+// }
+
+
+
+function 평균점수계산기(성적, 이번성적){
+  let result = 0;
+
+  for (i = 0; i < 성적.length; i++){
+    result = result + 성적[i];
+  }
+  console.log(result);
+
+  if (result/성적.length < 이번성적){
+    console.log(이번성적 - result/성적.length + '만큼 올랐네요'); 
+  }else{
+    console.log('재수추천');
+  }
+}
+
+평균점수계산기([2,3,4], 10);
 
 
 </script>
