@@ -48,14 +48,68 @@
 <!-- 127.0.0.1 어쩌구 아니면 localhost 떠있어야함 -->
 
 <script>
-
   $.get('https://codingapple1.github.io/hello.txt')
   .done(function(data){
     console.log(data)
     //            ↑ 서버에서 받아온 데이터는 여기
   })
-
 </script>
+
+<!-- ajax로 POST 요청하는 법 -->
+
+<!-- <script>
+  $.get('https://codingapple1.github.io/hello.txt',{name : 'kim'})
+  .done(function(data){
+    console.log(data)
+  })
+</script> -->
+
+<!-- ajax 실패시 특정 코드실행하고 싶으면 -->
+
+<!-- <script>
+  $.get('https://codingapple1.github.io/hello.txt5645')
+  .done(function(data){
+    console.log(data)
+  })
+  .fail(function(){
+    console.log('실패함')
+  })
+</script> -->
+
+<!-- 404는 url 주소가 이상하다는 뜻 -->
+
+
+<!-- ajax로 GET 요청하는 법 -->
+
+<script>
+  $.get('https://codingapple1.github.io/price.json')
+  .done(function(data){
+    console.log(data.price)
+  })
+  .fail(function(){
+    console.log('실패함')
+  })
+
+  fetch('https://codingapple1.github.io/price.json')
+    .then(res => res.json()) // ← 받아온 JSON을 object로 바꿔주는 기능
+    .then(data => {
+      console.log(data)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+</script>
+
+<!-- 브라우저 기본 함수 -->
+<!-- fetch 써도 ajax 가능 -->
+<!-- (참고) -->
+<!-- 서버와 유저는 -->
+<!-- 문자자료만 주고받을 수 있음 -->
+<!-- object, array 보내고 싶으면 -->
+<!-- 따옴표쳐서 문자처럼 만들어야함 -->
+<!-- "{"price":5000}" -->
+<!--      ↑ JSON -->
+<!-- (원하는자료만 뽑기 어려움) -->
 
 
 <body>
