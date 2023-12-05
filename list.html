@@ -17,24 +17,38 @@
     </div>
   </div>
 
+  <!-- 가격순정렬 -->
+  <!-- products array를 정렬하고 -->
+  <!-- products에 있던걸로 html 다시생성하면 끝일듯 -->
+
+
   <script>
     var products = [
       { id: 0, price: 70000, title: 'Blossom Dress' },
       { id: 1, price: 50000, title: 'Springfield Shirt' },
       { id: 2, price: 60000, title: 'Black Monastery' }
     ];
-    //                ↓ 이거뭐임 : products 안에 있는 하나하나의 데이터
-    products.forEach((a, i) => {
-      //                 ↑ 이거뭐임 : 반복문이 돌때마다 0부터 1씩 증가하는 정수
-      //   var 템플릿 =
-      //   `<div class="col-sm-4">
-      //       <img src="https://via.placeholder.com/600" class="w-100">
-      //       <h5>${products[i].title}</h5>
-      //       <p>가격 : ${products[i].price}</p>
-      //     </div>`;
-      // $('.row').append(템플릿)
 
-      // 혹은
+    // array 정렬하는 법
+    var 어레이 = [7,3,5,2,40];
+    어레이.sort(function(a, b){
+      //                  ↑ array 안의 자료
+      return a - b
+    });
+    // 문자정렬은 array.sort()
+    // array 숫자정렬은
+    // 어레이.sort(function(a, b){
+    //  return a - b  // 콜백함수 넣고
+    //});
+
+    // 1. a, b는 array 안의 자료임
+    // 2. return 오른쪽이 양수면 a를 오른쪽으로
+    // 3. return 오른쪽이 음수면 b를 오른쪽으로
+    console.log(어레이);
+
+
+
+    products.forEach((a, i) => {
       var 템플릿 =
         `<div class="col-sm-4">
           <img src="https://via.placeholder.com/600" class="w-100">
