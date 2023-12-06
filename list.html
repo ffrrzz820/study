@@ -54,24 +54,19 @@
     })
 
 
-    // array 정렬하는 법
+    
     var 어레이 = [7, 3, 5, 2, 40];
     var 어레이2 = ['a', 'b', 'c'];
-    어레이.sort(function (a, b) {
-      //                    ↑ array 안의 자료
-      return a - b
-    });
-    console.log(어레이);
-    // 문자 가나다순 정렬은?
-    어레이2.sort(function (a, b) {
-      if (a < b) {
-        return 1
-      } else {
-        return -1
-      }
-    });
-    console.log(어레이2);
-
+    // array 자료 원하는 것만 필터하려면
+    // .filter()
+    // array 자료 전부 변형하려면
+    // .map()
+    var 새어레이 = 어레이.map(function(a){
+      return a * 4
+    })
+   
+    console.log(새어레이);
+    
 
     products.forEach((a, i) => {
       var 템플릿 =
