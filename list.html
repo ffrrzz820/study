@@ -34,6 +34,24 @@
       { id: 2, price: 60000, title: 'Black Monastery' }
     ];
 
+    // 상품명 다나가순 정렬 버튼 기능
+    // 6만원 이하 상품만 보기 버튼 기능
+
+
+    var 어레이 = [7,3,5,2,40];
+    var 새어레이 = 어레이.filter(function(a){
+      return a < 4
+    });
+    console.log(새어레이);
+
+    // sort 함수 작동원리
+    // 1. a,b는 array 안의 자료임
+    // 2. return 오른쪽이 양수면 a를 오른쪽으로
+
+    // .sort()는 원본 변형 O
+    // .filter()는 원본 변형 X
+    
+
     document.querySelector('#price').addEventListener('click', function () {
       products.sort(function (a, b) {
         return a.price - b.price
@@ -49,24 +67,12 @@
           <p>가격 : ${a.price}</p>
         </div>`;
         $('.row').append(템플릿)
-        console.log(a)
       })
     })
 
 
     
-    var 어레이 = [7, 3, 5, 2, 40];
-    var 어레이2 = ['a', 'b', 'c'];
-    // array 자료 원하는 것만 필터하려면
-    // .filter()
-    // array 자료 전부 변형하려면
-    // .map()
-    var 새어레이 = 어레이.map(function(a){
-      return a * 4
-    })
-   
-    console.log(새어레이);
-    
+  
 
     products.forEach((a, i) => {
       var 템플릿 =
@@ -76,7 +82,6 @@
           <p>가격 : ${a.price}</p>
         </div>`;
       $('.row').append(템플릿)
-      console.log(a)
     })
   </script>
 
