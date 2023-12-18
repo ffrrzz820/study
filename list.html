@@ -64,8 +64,34 @@
       });
 
 
-      var 변수 = 0;
-      // 변수의 단점 = 페이지 새로고침시 다시 초기값으로 변함
+      // 브라우저 안에 몰래 데이터 저장가능
+      // localStorage
+      // SessionStorage
+      // 이름 : 값 형태로 저장가능
+      // IndexedDB
+      // 구조화된 대용량데이터 저장시
+      // Cookies
+      // 보통 로그인정보 저장
+      // Cache Storage
+      // html css js 파일 저장하는 곳
+
+
+      // localStorage
+      // SessionStorage
+      // 이름 : 값 형태로 저장가능
+      // 키 형태로
+      // 용량은 5MB
+      // 문자/숫자만 저장가능
+
+      // localStorge는
+      // 사이트 재접속해도 유지
+      // sessionStorage는
+      // 사이트나가면 자동삭제
+
+      
+
+
+
 
       $(".row").html("");
         // 1. 카드 3개있던 div의 내용 제거
@@ -82,6 +108,37 @@
           $(".row").append(템플릿);
         });
       })
+
+      // 로컬스토리지 저장하려면
+      // localStorage.setItem()
+      localStorage.setItem('이름', 'kim');
+      // 로컬스토리지 출력하려면
+      // localStorage.getItem()
+      localStorage.getItem('이름');
+      // 로컬스토리지 삭제하려면
+      // localStorage.removeItem()
+      localStorage.removeItem('이름');
+
+      // localStorage에 array, object 저장하려면
+      localStorage.setItem('num',[1,2,3])
+      // array를 집어넣으면 강제로 문자로 변환해줌 = array가 깨짐
+
+      var arr = [1,2,3]
+      // array/object → JSON으로 바꾸면 저장가능
+      var newArr = JSON.stringify(arr);
+      localStorage.setItem('num', newArr);
+      var 꺼낸거 = localStorage.getItem('num');
+      console.log(JSON.parse(꺼낸거));
+      // array/object → JSON은
+      // JSON.stringify()
+      // JSON → array/object는
+      // JSON.parse()
+
+      // localStorage 데이터 수정?
+      // 수정하려면
+      // 1. 자료꺼냄
+      // 2. 꺼낸거 수정함
+      // 3. 다시넣음
 
 
 
