@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>장바구니페이지</div>
+
+    <script>
+        if(localStorage.getItem('cart') != null){
+            var 꺼내기 = JSON.parse(localStorage.getItem('cart'));
+            console.log(꺼내기);
+            for(var i = 0; i < 꺼내기.length; i++){
+                var p = document.createElement('p')
+                p.textContent = '상품명 '+(i+1)+' : '+꺼내기[i];
+                document.body.appendChild(p);
+            }
+        }
+
+
+    </script>
+  </body>
+</html>

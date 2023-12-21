@@ -131,20 +131,17 @@
         // 2. 지금누른버튼 윗윗 글자를 가져와서
         // 3. localStorage에 [글자] 저장
 
-        // document.querySelectorAll('.buy')[0].addEventListener('click',(e)=>{
-        //   e.target.previousElementSibling.previousElementSibling('h5').text();
-        // })
+      $('.buy').click((e)=>{
+        var title = $(e.target).siblings('h5').text();
+        if(localStorage.getItem('cart') != null){
+          var 꺼낸거 = JSON.parse(localStorage.getItem('cart'));
+          꺼낸거.push(title);
+          localStorage.setItem('cart', JSON.stringify(꺼낸거));
+        }else{
+          localStorage.setItem('cart',JSON.stringify([title]));
+        }
+      })
 
-        $('.buy').click(function(e){
-          var title = $(e.target).siblings('h5').text();
-          if(localStorage.getItem('cart') != null){
-            var 꺼낸거 = JSON.parse(localStorage.getItem('cart'));
-            꺼낸거.push(title);
-            localStorage.setItem('cart', JSON.stringify(꺼낸거));
-          }else{
-            localStorage.setItem('cart',JSON.stringify([title]));
-          }
-        })
     </script>
 
 
