@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=3.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<style>
+    .slide-container{
+        width: 300vw;
+        transition: all 1s;
+    }
+    .slide-box{
+        width: 100vw;
+        float: left;
+    }
+    .slide-box img{
+        width: 100%;
+    }
+</style>
+<body>
+    <div style="overflow: hidden">
+        <div class="slide-container">
+          <div class="slide-box">
+            <img src="car1.png" draggable="false">
+          </div>
+          <div class="slide-box">
+            <img src="car2.png" draggable="false">
+          </div>
+          <div class="slide-box">
+            <img src="car3.png" draggable="false">
+          </div>
+        </div>
+    </div>
+    
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+</body>
+<script>
+    var 시작좌표 = 0;
+    var 눌렀냐 = false;
+    // 전역변수(아무데서나 쓸 수 있는 변수)
+
+    $('.slide-box').eq(0).on('mousedown',(e)=>{
+        시작좌표 = e.clientX;
+        눌렀냐 = true;
+    })
+    $('.slide-box').eq(0).on('mousemove',(e)=>{
+        if(눌렀냐 == true){
+            $('.slide-container').css('transform',`translateX(${e.clientX - 시작좌표}px)`);
+        }
+    })
+    $('.slide-box').eq(0).on('mouseup',(e)=>{
+        눌렀냐 = false;
+        console.log(e.clientX - 시작좌표);
+        if(e.clientX - 시작좌표 < -100){
+            $('.slide-container').css('transform','translateX(-100vw)').css('transition','all 0.5s');
+        }else{
+            $('.slide-container').css('transform','translateX(0vw)').css('transition','all 0.5s');
+        }
+        setTimeout(()=>{
+            $('.slide-container').css('transition','none');
+        },500);
+    })
+    // -----------------------------------
+    $('.slide-box').eq(0).on('touchstart',(e)=>{
+        시작좌표 = e.touches[0].clientX;
+        눌렀냐 = true;
+    })
+    $('.slide-box').eq(0).on('touchmove',(e)=>{
+        if(눌렀냐 == true){
+            $('.slide-container').css('transform',`translateX(${e.touches[0].clientX - 시작좌표}px)`);
+        }
+    })
+    $('.slide-box').eq(0).on('touchend',(e)=>{
+        눌렀냐 = false;
+        console.log(e.changedTouches[0].clientX - 시작좌표);
+        if(e.touches[0].clientX - 시작좌표 < -100){
+            $('.slide-container').css('transform','translateX(-100vw)').css('transition','all 0.5s');
+        }else{
+            $('.slide-container').css('transform','translateX(0vw)').css('transition','all 0.5s');
+        }
+        setTimeout(()=>{
+            $('.slide-container').css('transition','none');
+        },500);
+    })
+    // -----------------
+    // -----------------
+    $('.slide-box').eq(1).on('mousedown',(e)=>{
+        시작좌표 = e.clientX;
+        눌렀냐 = true;
+    })
+    $('.slide-box').eq(1).on('mousemove',(e)=>{
+        if(눌렀냐 == true){
+            $('.slide-container').css('transform',`translateX(${e.clientX - 시작좌표}px)`);
+        }
+    })
+    $('.slide-box').eq(1).on('mouseup',(e)=>{
+        눌렀냐 = false;
+        console.log(e.clientX - 시작좌표);
+        if(e.clientX - 시작좌표 < -100){
+            $('.slide-container').css('transform','translateX(-200vw)').css('transition','all 0.5s');
+        }else{
+            $('.slide-container').css('transform','translateX(-100vw)').css('transition','all 0.5s');
+        }
+        setTimeout(()=>{
+            $('.slide-container').css('transition','none');
+        },500);
+    })
+    // -----------------------------------
+    $('.slide-box').eq(1).on('touchstart',(e)=>{
+        시작좌표 = e.touches[0].clientX;
+        눌렀냐 = true;
+    })
+    $('.slide-box').eq(1).on('touchmove',(e)=>{
+        if(눌렀냐 == true){
+            $('.slide-container').css('transform',`translateX(${e.touches[0].clientX - 시작좌표}px)`);
+        }
+    })
+    $('.slide-box').eq(1).on('touchend',(e)=>{
+        눌렀냐 = false;
+        console.log(e.changedTouches[0].clientX - 시작좌표);
+        if(e.touches[0].clientX - 시작좌표 < -100){
+            $('.slide-container').css('transform','translateX(-200vw)').css('transition','all 0.5s');
+        }else{
+            $('.slide-container').css('transform','translateX(-100vw)').css('transition','all 0.5s');
+        }
+        setTimeout(()=>{
+            $('.slide-container').css('transition','none');
+        },500);
+    })
+    // 모든 변수는 범위가 function 임
+    // function 안에 있던 변수는
+    // function 탈출못함
+
+
+
+    $('.slide-1').on('click', function(){
+        $('.slide-container').css('transform','translateX(0vw)');
+    })
+    $('.slide-2').on('click', function(){
+        $('.slide-container').css('transform','translateX(-100vw)');
+    })
+    $('.slide-3').on('click', function(){
+        $('.slide-container').css('transform','translateX(-200vw)');
+    })
+</script>
+</html>
