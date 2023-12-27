@@ -88,49 +88,6 @@
     })
     // -----------------
     // -----------------
-    $('.slide-box').eq(1).on('mousedown',(e)=>{
-        시작좌표 = e.clientX;
-        눌렀냐 = true;
-    })
-    $('.slide-box').eq(1).on('mousemove',(e)=>{
-        if(눌렀냐 == true){
-            $('.slide-container').css('transform',`translateX(${e.clientX - 시작좌표}px)`);
-        }
-    })
-    $('.slide-box').eq(1).on('mouseup',(e)=>{
-        눌렀냐 = false;
-        console.log(e.clientX - 시작좌표);
-        if(e.clientX - 시작좌표 < -100){
-            $('.slide-container').css('transform','translateX(-200vw)').css('transition','all 0.5s');
-        }else{
-            $('.slide-container').css('transform','translateX(-100vw)').css('transition','all 0.5s');
-        }
-        setTimeout(()=>{
-            $('.slide-container').css('transition','none');
-        },500);
-    })
-    // -----------------------------------
-    $('.slide-box').eq(1).on('touchstart',(e)=>{
-        시작좌표 = e.touches[0].clientX;
-        눌렀냐 = true;
-    })
-    $('.slide-box').eq(1).on('touchmove',(e)=>{
-        if(눌렀냐 == true){
-            $('.slide-container').css('transform',`translateX(${e.touches[0].clientX - 시작좌표}px)`);
-        }
-    })
-    $('.slide-box').eq(1).on('touchend',(e)=>{
-        눌렀냐 = false;
-        console.log(e.changedTouches[0].clientX - 시작좌표);
-        if(e.touches[0].clientX - 시작좌표 < -100){
-            $('.slide-container').css('transform','translateX(-200vw)').css('transition','all 0.5s');
-        }else{
-            $('.slide-container').css('transform','translateX(-100vw)').css('transition','all 0.5s');
-        }
-        setTimeout(()=>{
-            $('.slide-container').css('transition','none');
-        },500);
-    })
     // 모든 변수는 범위가 function 임
     // function 안에 있던 변수는
     // function 탈출못함
