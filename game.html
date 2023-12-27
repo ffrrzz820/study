@@ -15,17 +15,19 @@
     
 
     <script>
-        let 변수 = 2+3;
-        switch(변수){
-            case 3:
-                alert('변수가3이네요');
-                break
-            case 4:
-                alert('변수가4이네요');
-                break
-            default:
-                alert('아무것도 해당안됨')
-        }
+        document.querySelector('#quiz').addEventListener('click',(e)=>{
+            switch(e.target.innerHTML){
+                case '와이프':
+                    alert('와이프를 사랑하시네요');
+                    break;
+                case '부모님':
+                    alert('효자시네요');
+                    break;
+                case '키우던 개':
+                    alert('사람보다 동물을 더 좋아하시네요');
+                    break;
+            };
+        })
     </script>
 </body>
 </html>
